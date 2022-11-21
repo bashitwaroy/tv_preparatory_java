@@ -19,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * Injected dependencies like TestInfo and TestReporter
  */
 
+@DisplayName("Test Cases for ArrivalDep Class")
 public class ArrivalDepTests {
 
     ArrivalDep arrivalDep;
@@ -50,7 +51,7 @@ public class ArrivalDepTests {
         @ParameterizedTest(name = "{0}")
         @MethodSource("checkMinimumNumberOfTrainsData")
         @DisplayName("check if there is more than one train in the list")
-        void checkMinimumNumberOfTrains(List<Integer> arrList, List<Integer> depList) {
+        void checkMinimumNumberOfTrains(String testCaseName, List<Integer> arrList, List<Integer> depList) {
             assertEquals(1, arrivalDep.getMinimumNumberOfPlatforms(arrList, depList),
                     () -> "test failed when there is only one train in the time table");
         }
