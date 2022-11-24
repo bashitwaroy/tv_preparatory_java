@@ -33,7 +33,7 @@ public class EmployeeResource {
     }
 
     @PutMapping("/{id}")
-    public Employee modifyEmployee(@RequestBody Employee employee) {
+    public Employee modifyEmployee(@RequestBody Employee employee, @PathVariable String id) {
         employeeRecords.put(employee.getId(), employee);
         return employee;
     }
