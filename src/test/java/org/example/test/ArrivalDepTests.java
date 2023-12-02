@@ -6,12 +6,10 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import tv.example.ArrivalDep;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Stream;
 
+import static java.util.Map.entry;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -31,7 +29,9 @@ public class ArrivalDepTests {
         arrivalDep = new ArrivalDep();
         this.testInfo = testInfo;
         this.testReporter = testReporter;
-        testReporter.publishEntry("Running test class: " + testInfo.getTestClass() + "test method: " + testInfo.getTestMethod());
+        Map<String, String> testReports = Map.ofEntries(
+                entry("test info: ", testInfo.toString()));
+        testReporter.publishEntry(testReports);
     }
 
     @DisplayName("tests for minimum number of platforms")
