@@ -4,7 +4,9 @@ import org.junit.jupiter.api.*;
 import tv.example.ShoppingCart;
 
 import java.util.ArrayList;
+import java.util.Map;
 
+import static java.util.Map.entry;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName("Test Cases for ShoppingCart Class")
@@ -19,7 +21,7 @@ public class ShoppingCartTests {
         shoppingCart = new ShoppingCart(new ArrayList<>());
         this.testInfo = testInfo;
         this.testReporter = testReporter;
-        testReporter.publishEntry("Running test class: " + testInfo.getTestClass() + "test method: " + testInfo.getTestMethod());
+        testReporter.publishEntry(Map.ofEntries(entry("test info: ", testInfo.toString())));
     }
 
     @Test

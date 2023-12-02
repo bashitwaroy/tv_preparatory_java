@@ -4,7 +4,7 @@ public class CheckPalindrome {
 
     public boolean isPalindrome(String inputStr, int start, int end) {
 
-        if (inputStr == null || inputStr.length() == 0)
+        if (inputStr == null || inputStr.isEmpty())
             return false;
         if (start >= end) {
             return true;

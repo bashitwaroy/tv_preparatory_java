@@ -32,8 +32,8 @@ public class CollectionQTests {
         assertEquals(expected, collectionQ.findDuplicatesFromList(inputList), "the set with duplicates does not match");
     }
 
-    @NullAndEmptySource
     @ParameterizedTest
+    @NullAndEmptySource
     public void findDuplicatesFromNullList(List list) {
         assertEquals(Set.of(), collectionQ.findDuplicatesFromList(list));
     }
